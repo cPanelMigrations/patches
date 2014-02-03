@@ -17,5 +17,7 @@ Steps to use:
 The cpmove integrity check patches and overrides were applied against the following from _DEVEL (Feb 3, 2014):
 
 pkgacct-pXa     7.2-456-gaa08c0e
+
 pkgacct-da      7.2-422-gfe6179b
+
 pkgacct-enXim   7.2-422-gfe6179b
