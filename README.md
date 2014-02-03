@@ -11,3 +11,11 @@ Steps to use:
 3. mv updateuserdomains-universal_FB-82433 updateuserdomains-universal
 4. chmod +x updateuserdomains-universal
 5. run the migration using the allow-override option
+
+--
+
+The cpmove integrity check patches and overrides were applied against the following from _DEVEL (Feb 3, 2014):
+
+pkgacct-pXa     7.2-456-gaa08c0e
+pkgacct-da      7.2-422-gfe6179b
+pkgacct-enXim   7.2-422-gfe6179b
