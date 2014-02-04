@@ -14,7 +14,7 @@ Steps to use:
 
 --
 
-The cpmove integrity check patches and overrides were applied against the following from _DEVEL (Feb 3, 2014):
+The cpmove integrity check patches and overrides were applied against the following from _DEVEL (Feb 4, 2014):
 
 pkgacct-pXa     7.2-456-gaa08c0e
 

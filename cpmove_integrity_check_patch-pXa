@@ -1,0 +1,33 @@
+--- main.pl.orig        2014-01-10 17:05:15.000000000 +0300
++++ main.pl     2014-02-04 16:33:06.760905305 +0300
+@@ -1576,6 +1576,30 @@
+         print "md5sum is: $chunks->[0]->{'md5sum'}\n";
+     }
+ 
++    ### http://features.cpanel.net/responses/verify-cpmove-tarball-integrity
++    print "\n\nVerifying tarball integrity...";
++    my $pid = IPC::Open3::open3( '</dev/null', '>/dev/null', '>/dev/null', 'tar', 'ztf', $tarball );
++    waitpid( $pid, 0 );
++
++    my $status = $? >> 8;
++
++    if ($status) {
++        if ( !-e $tarball ) {
++            print "$tarball missing?\n";
++        }
++        else {
++            my $name = $tarball;
++            $name =~ /(.*)\.tar\.gz$/;
++            $name = $1;
++
++            print "may be corrupt. Renaming to ${name}-CORRUPT.tar.gz\n";
++            rename $tarball, "${name}-CORRUPT.tar.gz" or print "rename failed!\n";
++        }
++    }
++    else {
++        print "Done\n";
++    }
++
+     unlink $logfile;
+ }
+ 
